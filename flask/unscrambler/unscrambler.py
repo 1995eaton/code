@@ -2,9 +2,9 @@ from flask import Flask, request, render_template
 from markupsafe import Markup
 import os, csv
 app = Flask(__name__)
+dictionary = {key: value for key, value in csv.reader(open("dictionary"))}
 @app.route('/', methods=['GET', 'POST'])
 def main():
-    dictionary = {key: value for key, value in csv.reader(open("dictionary"))}
     if request.method == 'GET':
         return render_template('index.html')
     if request.method == 'POST':

@@ -12,9 +12,10 @@ while True:
 				count += 1
 		if count == 1:
 			count2 += 1
-			os.system("clear")
-			print(count2)
+			#os.system("clear")
+			#print(count2)
+			print(n)
 			if count2 == int(q1) - 1:
-				os.system("clear")
+				#os.system("clear")
 				print(n)
 				break

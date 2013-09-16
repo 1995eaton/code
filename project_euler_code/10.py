@@ -17,8 +17,8 @@ def simple_prime(num):
 
 def main():
 	z = 0
-	primes = simple_prime(math.sqrt(2000000))
-	for n in range(2,2000000):
+	primes = simple_prime(math.sqrt(100000))
+	for n in range(2,100000):
 		c = 0
 		for n2 in primes[:len(primes)]:
 			if n % n2 == 0:
@@ -27,6 +27,6 @@ def main():
 		if c == 0:
 			print(n)
 			z += n
-	print(z)
+	#print(z)
 
 main()

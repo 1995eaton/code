@@ -8,17 +8,18 @@
 
 using namespace std;
 
+const unsigned long long int limit = 100;
+
 int main() {
 
 	clock_t start;
 	double duration;
 	start = clock();
 
-	const int limit = 1000000;
 	const int limsq = sqrt(limit);
 	int x, y;
 	int n, nm;
-	bitset<limit> p;
+	bitset<limit>& p = *(new bitset<limit>());
 
 	for(x = 1; x < limsq; x++) {
 

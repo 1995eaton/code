@@ -1,16 +1,16 @@
-#!/usr/bin/python
+import numpy, math
 
-#ptest checks a number's factors for primes - does not use seive's method
+def Erat(lim):
+ sieve = numpy.ones((lim, ), dtype = numpy.bool)
+ for i in range(2, int(lim**0.5)):
+  sieve[i*2::i] = False
+ return [index for index, i in enumerate(sieve) if i == True][2:]
 
-def ptest(num):
-	for a in range(1, num + 1):
-		if num % a == 0:
-			count = 0
-			for p in range(1,a + 1):
-				if a % p == 0:
-					count+= 1
-			if count == 2:
-				print(a, "is prime.")
+def main(n = 600851475143):
+ primes = Erat(int(n**0.5))[::-1]
+ for i in primes:
+  if not n % i:
+   print(i)
+   break
 
-i = input("Enter a number: ")
-ptest(int(i))
+main()

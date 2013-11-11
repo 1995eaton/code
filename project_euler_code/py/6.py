@@ -1,11 +1,1 @@
-#!/usr/bin/python
-
-import math
-
-a, b = 0, 0
-
-for n in range(1,101):
-	c = n * n
-	a += c
-	b += n
-print((b * b) - a)
+print(abs(sum([i**2 for i in range(101)]) - sum(range(101))**2))

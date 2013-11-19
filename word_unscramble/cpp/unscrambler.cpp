@@ -6,12 +6,13 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 
+	ifstream dictionary("dictionary.txt");
+
 	for(int index = 1; index < argc; ++index) {
 
 		string line;
 		string word_in = argv[index];
 		cout << word_in << ":\n";
-		ifstream dictionary("dictionary.txt");
 
 		while(getline(dictionary, line)) {
 
@@ -27,5 +28,6 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
+	dictionary.close();
 	return 0;
 }

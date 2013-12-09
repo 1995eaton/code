@@ -9,7 +9,10 @@ def unscrambleWords():
 		return render_template('index.html')
 	if request.method == 'POST':
 		word = request.form['WORD']
-		dictionary = (open("dictionary", "r").read()).rsplit()
+		try:
+			dictionary = (open(str("dictionary_segments/" + str(len(word))), "r").read()).rsplit()
+		except FileNotFoundError as DNE:
+			return render_template('index.html', word = "No words of this length exist in the English language")
 		word_sorted = sorted(word)
 		words_unscrambled = []
 		for i in dictionary:

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Word Unscrambler</title>
+</head>
+<body>
+<form method="post">
+	<input type="text" name="WORD"><br>
+	<input type="submit" value="Unscramble"><br>
+</form>
+{% if word %}
+<h1>{{ word }}</h1>
+{% endif %}
+</body>
+</html>

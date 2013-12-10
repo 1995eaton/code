@@ -21,13 +21,16 @@
 		<input type="hidden" name="previous_anagrams" value="{{ current_anagrams }}{{ previous_anagrams }}">
 	{% endif %}
 </form>
-<div class="word_container">
 {% if current_anagrams %}
+<div class="word_container">
 	<div id="alist">
 		{{ current_anagrams }}{% if previous_anagrams %}<hr/>{% endif %}{{ previous_anagrams }}
 	</div>
+</div>
 {% else %}
+<div class="word_container">
 {{ current_anagrams }}{{ previous_anagrams }}
+</div>
 {% endif %}
 </div>
 </body>

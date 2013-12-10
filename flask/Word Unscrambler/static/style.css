@@ -1,0 +1,51 @@
+/*<link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>*/
+
+body {
+	background-image: url('images/background2.png');
+	background-repeat: repeat;
+}
+
+input[type="text"] {
+	position: relative;
+	width: 40%;
+	height: 45px;
+	left: 30%;
+	right: 30%;
+	top: 40px;
+	opacity: 0.7;
+	transition: opacity 0.10s ease-in-out;
+	-moz-transition: opacity 0.10s ease-in-out;
+	-webkit-transition: opacity 0.10s ease-in-out;
+	border: 2px solid;
+	border-color: black;
+	border-radius: 4px;
+	overflow: hidden;
+	text-align: center;
+	outline: none;
+	font-family: 'Nixie One', cursive;
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-size: 20px;
+}
+
+input[type="text"]:hover {
+	opacity: 1.0;
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+.word_container {
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	width: 80%;
+	left: 10%;
+	right: 10%;
+	height: 78%;
+	bottom: 0px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	font-color: white;
+	text-align: center;
+	padding: 20px;
+	font-family: 'Nixie One', cursive;
+	font-size: 18px;
+	color: white;
+}

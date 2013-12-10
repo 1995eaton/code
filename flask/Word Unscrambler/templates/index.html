@@ -2,14 +2,16 @@
 <html>
 <head>
 <title>Word Unscrambler</title>
+<link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 <form method="post">
-	<input type="text" name="WORD"><br>
-	<input type="submit" value="Unscramble"><br>
+	<input type="text" name="WORD" id="WORD" placeholder="Type a word to be unscrambled."><br>
+	<input type="hidden" name="hist" id="hist" value="{{ word }}{{ hist }}">
 </form>
-{% if word %}
-<h1>{{ word }}</h1>
-{% endif %}
+<div class="word_container">
+	{{ word|safe }}{{ hist|safe }}
+</div>
 </body>
 </html>

@@ -11,8 +11,8 @@ hr {
 }
 
 input[type="text"] {
-	position: relative;
-	width: 40%;
+	position: fixed;
+	width: 42.5%;
 	height: 45px;
 	left: 30%;
 	right: 30%;

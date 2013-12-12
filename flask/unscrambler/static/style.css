@@ -12,26 +12,26 @@ hr {
 footer {
 	position: absolute;
 	background-color: rgba(0, 0, 0, 0.7);
-	bottom: 0px;
 	width: 100%;
-	left: 0px;
-	margin: 0 -10px;
 	height: 18px;
+	margin: 0 -10px;
+	left: 0px;
+	bottom: 0px;
 	padding-left: 5px;
 	padding-right: 5px;
 }
 
 .footer_box {
 	position:absolute;
-	font-family: 'Nixie One', cursive;
-	font-size: 14px;
-	text-align: center;
-	-webkit-font-smoothing: subpixel-antialiased;
 	background-color: rgba(255, 255, 255, 0.7);
 	width: 100px;
 	height: 100%;
 	right: 0px;
 	padding-right: 5px;
+	font-family: 'Nixie One', cursive;
+	font-size: 14px;
+	text-align: center;
+	-webkit-font-smoothing: subpixel-antialiased;
 	-webkit-animation-name: pulseWidth;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: ease;
@@ -50,19 +50,19 @@ footer {
 	left: 0px;
 	right: 0px;
 	top: 50px;
+	border: 2px solid;
+	border-color: black;
+	border-radius: 4px;
+	outline: none;
+	overflow: hidden;
+	font-family: 'Nixie One', cursive;
+	font-size: 20px;
+	-webkit-font-smoothing: subpixel-antialiased;
+	text-align: center;
 	opacity: 0.7;
 	transition: opacity 0.30s ease-in-out;
 	-moz-transition: opacity 0.30s ease-in-out;
 	-webkit-transition: opacity 0.30s ease-in-out;
-	border: 2px solid;
-	border-color: black;
-	border-radius: 4px;
-	overflow: hidden;
-	text-align: center;
-	outline: none;
-	font-family: 'Nixie One', cursive;
-	font-size: 20px;
-	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 .inputBox:hover, .inputBox:focus {
@@ -83,7 +83,6 @@ footer {
 	bottom: 0px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
-	font-color: white;
 	text-align: center;
 	font-family: 'Nixie One', cursive;
 	font-size: 18px;
@@ -97,26 +96,26 @@ footer {
 
 .wordnew {
 	position: absolute;
+	width: 500px;
+	margin: 0 auto;
 	left: 0px;
 	right: 0px;
-	margin: 0 auto;
-	width: 500px;
 	padding-top: 0px;
 }
 
 .wn_nadd {
 	position: absolute;
+	width: 500px;
 	left: 0px;
 	right: 0px;
 	margin: 0 auto;
-	width: 500px;
 	padding-top: 30px;
 }
 
 .wordold {
 	position: relative;
+	width: 500px;
+	margin: 0 auto;
 	left: 0px;
 	right: 0px;
-	margin: 0 auto;
-	width: 500px;
 }

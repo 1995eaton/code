@@ -1,7 +1,5 @@
-/*<link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>*/
-
 body {
-	background-image: url('images/background2.png');
+	background-image: url('images/background.png');
 	background-repeat: repeat;
 	overflow: hidden;
 }
@@ -72,11 +70,6 @@ footer {
 	box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
 }
 
-/*input[type="text"]:focus {*/
-/*opacity: 1.0;*/
-/*box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);*/
-/*}*/
-
 #word_container {
 	background-color: rgba(0, 0, 0, 0.6);
 	position: absolute;
@@ -87,7 +80,6 @@ footer {
 	left: 0px;
 	right: 0px;
 	top: 145px;
-	/*height: 100%;*/
 	bottom: 0px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
@@ -127,13 +119,4 @@ footer {
 	right: 0px;
 	margin: 0 auto;
 	width: 500px;
-}
-
-@-webkit-keyframes pulseWidth {
-	from {
-		width: 200px;
-	}
-	to {
-		width: 220px;
-	}
 }

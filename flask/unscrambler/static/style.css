@@ -32,11 +32,6 @@ footer {
 	font-size: 14px;
 	text-align: center;
 	-webkit-font-smoothing: subpixel-antialiased;
-	-webkit-animation-name: pulseWidth;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: ease;
-	-webkit-animation-direction: alternate;
-	-webkit-animation-duration: 2s;
 }
 
 .footer_box {

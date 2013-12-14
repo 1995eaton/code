@@ -1,23 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html> <head>
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 <title>Word Unscrambler</title>
 <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(
+
+<script type="text/javascript"> $(document).ready(
 		function() {
 			$(".wordnew").animate({'top': '+=30'}, 200);
+		}); </script>
+
+<script> var slideSpeed = 500;
+	$(document).ready(function() {
+		$("#infoButton").click(function() {
+			$("#infoButton").animate({"right": "-=25"}, slideSpeed);
+			$("#infoBox").animate({'right': '+=175'}, slideSpeed);
 		});
-</script>
+		$(".ibCloseButton").click(function() {
+			$("#infoButton").animate({"right": "+=25"}, slideSpeed);
+			$("#infoBox").animate({"right": "-=175"}, slideSpeed);
+		});
+	}); </script>
+
+<script> function idShow(id) {
+	document.getElementById(id).style.display = 'block';
+} </script>
+
+<script> function idClose(id) {
+	document.getElementById(id).style.display = "none";
+} </script>
 </head>
 
 <body OnLoad="document.form1.anagram_input.focus();">
 
 <form name="form1" method="post">
-	<input type="text" class="inputBox" name="anagram_input" placeholder="Type a word to be unscrambled."><br>
+	<input type="text" class="inputBox" name="anagram_input"><br>
 	{% if current_anagrams and previous_anagrams %}
 		<input type="hidden" name="previous_anagrams" value="{{ current_anagrams }}<hr/>{{ previous_anagrams }}">
 	{% else %}
@@ -25,7 +44,7 @@
 	{% endif %}
 </form>
 
-<div id="word_container">
+<div id="wordContainer">
 	{% if current_anagrams %}
 		<div class="wordnew">{{ current_anagrams }}
 			<div class="wordold">
@@ -37,5 +56,13 @@
 		<div class="wn_nadd">{{ previous_anagrams }}</div>
 	{% endif %}
 </div>
-</body>
-</html>
+
+<div id="infoButton"><i>i</i></div>
+
+<div id="infoBox">
+	<div class="ibCloseButton">---</div>
+	<div class="githubLogo"></div>
+	<div class="githubLink"><a href="https://github.com/1995eaton/">GitHub Source</a></div>
+</div>
+
+</body> </html>

@@ -7,6 +7,11 @@ body {
 hr {
 	width: 100px;
 	opacity: 0.3;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 footer {
@@ -45,27 +50,36 @@ footer {
 	left: 0px;
 	right: 0px;
 	top: 50px;
-	border: 2px solid;
-	border-color: black;
+	border: 2px solid rgba(255, 255, 255, 0.5);
 	border-radius: 4px;
+	background-color: rgba(0, 0, 0, 0.6);
 	outline: none;
 	overflow: hidden;
 	font-family: 'Nixie One', cursive;
 	font-size: 20px;
 	-webkit-font-smoothing: subpixel-antialiased;
 	text-align: center;
+	color: white;
 	opacity: 0.7;
-	transition: opacity 0.30s ease-in-out;
-	-moz-transition: opacity 0.30s ease-in-out;
-	-webkit-transition: opacity 0.30s ease-in-out;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	transition: border-color 0.3s ease-in-out;
+	-moz-transition: border-color 0.3s ease-in-out;
+	-webkit-transition: border-color 0.3s ease-in-out;
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+	user-select: none;
 }
 
-.inputBox:hover, .inputBox:focus {
-	opacity: 1.0;
-	box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+.inputBox:hover {
+	border-color: rgba(71, 117, 255, 0.5);
+}
+.inputBox:focus {
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
 
-#word_container {
+#wordContainer {
 	background-color: rgba(0, 0, 0, 0.6);
 	position: absolute;
 	overflow-x: hidden;
@@ -77,16 +91,24 @@ footer {
 	top: 145px;
 	bottom: 0px;
 	border-top-left-radius: 8px;
+	border-top: 2px solid rgba(255, 255, 255, 0.5);
+	border-left: 2px solid rgba(255, 255, 255, 0.5);
+	border-right: 2px solid rgba(255, 255, 255, 0.5);
 	border-top-right-radius: 8px;
 	text-align: center;
 	font-family: 'Nixie One', cursive;
 	font-size: 18px;
 	color: white;
+	-moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+	transition: border-color 0.3s ease-in-out;
+	-moz-transition: border-color 0.3s ease-in-out;
+	-webkit-transition: border-color 0.3s ease-in-out;
 }
 
-#word_container::-webkit-scrollbar {
-	display: none;
-	width: 0px;
+#wordContainer:hover {
+	border-color: rgba(71, 117, 255, 0.5);
 }
 
 .wordnew {
@@ -108,9 +130,129 @@ footer {
 }
 
 .wordold {
-	position: relative;
+	position: absolute;
 	width: 500px;
 	margin: 0 auto;
 	left: 0px;
 	right: 0px;
+}
+
+#infoButton {
+	position: fixed;
+	right: 10px;
+	bottom: 13px;
+	height: 25px;
+	width: 10px;
+	font-size: 24pt;
+	color: white;
+	opacity: 0.5;
+	transition: text-shadow 0.30s ease-in-out;
+	-moz-transition: text-shadow 0.30s ease-in-out;
+	-webkit-transition: text-shadow 0.30s ease-in-out;
+	transition: opacity 0.50s ease-in-out;
+	-webkit-transition: opacity 0.50s ease-in-out;
+	-webkit-transition: opacity 0.50s ease-in-out;
+	cursor: default;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	transition: color 0.3s ease-in-out;
+	-moz-transition: color 0.3s ease-in-out;
+	-webkit-transition: color 0.3s ease-in-out;
+}
+
+#infoButton:hover {
+	opacity: 1;
+	color: #4775FF;
+}
+
+#infoBox {
+	position: absolute;
+	right: -175px;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 175px;
+	border-top-left-radius: 8px;
+	height: 150px;
+	border-top: 2px solid rgba(255, 255, 255, 0.5);
+	border-left: 2px solid rgba(255, 255, 255, 0.5);
+	transition: border-color 0.3s ease-in-out;
+	-moz-transition: border-color 0.3s ease-in-out;
+	-webkit-transition: border-color 0.3s ease-in-out;
+}
+
+#infoBox:hover {
+	border-color: rgba(71, 117, 255, 0.5);
+}
+
+.ibCloseButton {
+	position: relative;
+	left: 5px;
+	top: 0;
+	color: white;
+	opacity: 0.7;
+	cursor: default;
+	height: 5px;
+	width: 20px;
+	letter-spacing: -1.5px;
+	font-size: 18px;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	transition: color 0.3s ease-in-out;
+	-moz-transition: color 0.3s ease-in-out;
+	-webkit-transition: color 0.3s ease-in-out;
+}
+
+.ibCloseButton:hover {
+	color: #4775FF;
+}
+
+.githubLogo {
+	background-image: url("images/github.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	height: 65px;
+	width: 68px;
+	top: 20px;
+	border-radius: 90px;
+	opacity: 0.7;
+	padding: 10px;
+	transition: background-image 0.3s ease-in-out;
+	-moz-transition: background-image 0.3s ease-in-out;
+	-webkit-transition: background-image 0.3s ease-in-out;
+}
+
+.githubLogo:hover {
+	background-image: url("images/github_hover.png");
+}
+
+.githubLink {
+	position: absolute;
+	bottom: 5px;
+	width: 100%;
+	text-align: center;
+	font-size: 18pt;
+	opacity: 0.7;
+}
+
+a {
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+	color: white;
+}
+
+a:visited {
+	color: white;
+}
+
+a:hover {
+	color: #4775FF;
 }

@@ -1,5 +1,5 @@
 body {
-	background-image: url('images/background.png');
+	background-image: url('../images/background.png');
 	background-repeat: repeat;
 	overflow: hidden;
 	overflow-y: auto;
@@ -147,7 +147,7 @@ hr {
 #infoBox:hover .closeBox { background-color: #4775FF; }
 
 .githubLogo {
-	background-image: url("images/github.png");
+	background-image: url("../images/github.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	position: relative;
@@ -165,7 +165,7 @@ hr {
 }
 
 .githubLogo:hover {
-	background-image: url("images/github_hover.png");
+	background-image: url("../images/github_hover.png");
 }
 
 .githubLink {

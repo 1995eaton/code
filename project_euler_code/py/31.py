@@ -1,4 +1,3 @@
-#!/usr/bin/python
 
 count = 1 # +1 for 200
 

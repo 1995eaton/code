@@ -1,4 +1,3 @@
-#!/usr/bin/python
 
 def isBouncy(n):
     ng = [int(i) for i in str(n)]

@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import math
 def r(n, d):
     return [d, d + n]

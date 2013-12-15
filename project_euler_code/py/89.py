@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import os, sys, math, re
 numerals = (open("roman.txt", "r").read()).split("\n")
 

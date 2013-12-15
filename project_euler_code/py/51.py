@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import math, numpy, re
 def Erat(lim):
     sieve = numpy.ones((lim, ), dtype=bool)

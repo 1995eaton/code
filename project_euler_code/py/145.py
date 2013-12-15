@@ -1,4 +1,3 @@
-#!/usr/bin/python
 #lim = 10**9
 lim = 100000001
 c=0

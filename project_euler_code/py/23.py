@@ -1,4 +1,3 @@
-#!/usr/bin/python
 
 import numpy
 from termcolor import colored

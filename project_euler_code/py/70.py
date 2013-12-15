@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import numpy
 def Erat(lim):
     sieve = [[] for i in range(2, lim + 1)]

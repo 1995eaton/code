@@ -2,44 +2,13 @@ body {
 	background-image: url('images/background.png');
 	background-repeat: repeat;
 	overflow: hidden;
+	overflow-y: auto;
 }
 
 hr {
 	width: 100px;
 	opacity: 0.3;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
 	user-select: none;
-}
-
-footer {
-	position: absolute;
-	background-color: rgba(0, 0, 0, 0.7);
-	width: 100%;
-	height: 18px;
-	margin: 0 -10px;
-	left: 0px;
-	bottom: 0px;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-.footer_box {
-	position:absolute;
-	background-color: rgba(255, 255, 255, 0.7);
-	width: 100px;
-	height: 100%;
-	right: 0px;
-	padding-right: 5px;
-	font-family: 'Nixie One', cursive;
-	font-size: 14px;
-	text-align: center;
-	-webkit-font-smoothing: subpixel-antialiased;
-}
-
-.footer_box {
 }
 
 .inputBox {
@@ -52,7 +21,7 @@ footer {
 	top: 50px;
 	border: 2px solid rgba(255, 255, 255, 0.5);
 	border-radius: 4px;
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.7);
 	outline: none;
 	overflow: hidden;
 	font-family: 'Nixie One', cursive;
@@ -61,10 +30,6 @@ footer {
 	text-align: center;
 	color: white;
 	opacity: 0.7;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
 	transition: border-color 0.3s ease-in-out;
 	-moz-transition: border-color 0.3s ease-in-out;
 	-webkit-transition: border-color 0.3s ease-in-out;
@@ -74,9 +39,6 @@ footer {
 
 .inputBox:hover {
 	border-color: rgba(71, 117, 255, 0.5);
-}
-.inputBox:focus {
-	box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
 
 #wordContainer {
@@ -145,10 +107,7 @@ footer {
 	width: 10px;
 	font-size: 24pt;
 	color: white;
-	opacity: 0.5;
-	transition: text-shadow 0.30s ease-in-out;
-	-moz-transition: text-shadow 0.30s ease-in-out;
-	-webkit-transition: text-shadow 0.30s ease-in-out;
+	opacity: 0.7;
 	transition: opacity 0.50s ease-in-out;
 	-webkit-transition: opacity 0.50s ease-in-out;
 	-webkit-transition: opacity 0.50s ease-in-out;
@@ -163,53 +122,29 @@ footer {
 }
 
 #infoButton:hover {
-	opacity: 1;
 	color: #4775FF;
 }
 
 #infoBox {
-	position: absolute;
+	position: fixed;
 	right: -177px;
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.7);
 	width: 175px;
 	border-top-left-radius: 8px;
 	height: 150px;
-	border-top: 2px solid rgba(255, 255, 255, 0.5);
-	border-left: 2px solid rgba(255, 255, 255, 0.5);
+	border-top: 2px solid white;
+	border-left: 2px solid white;
 	transition: border-color 0.3s ease-in-out;
 	-moz-transition: border-color 0.3s ease-in-out;
 	-webkit-transition: border-color 0.3s ease-in-out;
 }
 
 #infoBox:hover {
-	border-color: rgba(71, 117, 255, 0.5);
+	border-color: #4775FF;
 }
 
-.ibCloseButton {
-	position: relative;
-	left: 5px;
-	top: 0;
-	color: white;
-	opacity: 0.7;
-	cursor: default;
-	height: 5px;
-	width: 20px;
-	letter-spacing: -1.5px;
-	font-size: 18px;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	transition: color 0.3s ease-in-out;
-	-moz-transition: color 0.3s ease-in-out;
-	-webkit-transition: color 0.3s ease-in-out;
-}
-
-.ibCloseButton:hover {
-	color: #4775FF;
-}
+#infoBox:hover .closeBox { background-color: #4775FF; }
 
 .githubLogo {
 	background-image: url("images/github.png");
@@ -223,7 +158,6 @@ footer {
 	width: 68px;
 	top: 20px;
 	border-radius: 90px;
-	opacity: 0.7;
 	padding: 10px;
 	transition: background-image 0.3s ease-in-out;
 	-moz-transition: background-image 0.3s ease-in-out;
@@ -240,7 +174,6 @@ footer {
 	width: 100%;
 	text-align: center;
 	font-size: 18pt;
-	opacity: 0.7;
 }
 
 a {
@@ -255,4 +188,22 @@ a:visited {
 
 a:hover {
 	color: #4775FF;
+}
+
+.closeBox {
+	position: absolute;
+	background-color: white;
+	border-top-left-radius: 5.85px;
+	border-bottom-right-radius: 5.85px;
+	top: -2px;
+	left: -2px;
+	height: 20px;
+	width: 20px;
+	transition: background-color 0.3s ease-in-out;
+	-moz-transition: background-color 0.3s ease-in-out;
+	-webkit-transition: background-color 0.3s ease-in-out;
+}
+
+.closeBox:hover {
+	background-color: #4775FF;
 }

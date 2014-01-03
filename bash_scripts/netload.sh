@@ -1,8 +1,8 @@
 #!/bin/bash
 
-_wldev="$(iw dev | grep -Eo "face .*" | cut --bytes=6-)"
+_wldev=`iw dev | grep -Eo "face .*" | cut --bytes=6-)`
 
-if [ ! -d "/etc/netctl" || ! `compgen -c | grep -E "^iw$"` ]; then
+if [[ ! -d "/etc/netctl" || ! `compgen -c | grep -E "^iw$"` ]]; then
 	echo "Are you sure you have netctl and/or iw installed?"
 	exit
 fi

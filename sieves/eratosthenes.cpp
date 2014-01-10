@@ -1,5 +1,5 @@
 /* Compile with g++ -Ofast -march=native for best results
-   See http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes */
+   See http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes for more info */
 
 #include <iostream>
 #include <vector>

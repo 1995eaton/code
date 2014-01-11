@@ -1,25 +1,21 @@
 #include<iostream>
 
-using namespace std;
-
 int main() {
 
-	int trianglenumber;
+	int n, c = 0;
 	const int divisorlimit = 500;
-	int n;
-	int natural = 1;
-	int c = 0;
+	int nat = 1;
 
-	for(trianglenumber = 1; c <= divisorlimit; trianglenumber += natural) {
+	for(int tnum = 1; c <= divisorlimit; tnum += nat) {
 
 		c = 0;
 
-		for(n = 1; n <= trianglenumber / n; n++) {
+		for(int n = 1; n <= tnum / n; n++) {
 
-			if(trianglenumber % n == 0) {
+			if(tnum % n == 0) {
 				c++;
 
-				if(trianglenumber / n != n) {
+				if(tnum / n != n) {
 					c++;
 				}
 
@@ -29,11 +25,9 @@ int main() {
 
 			}
 		}
-
-		natural++;
-
+		nat++;
 		if(c >= divisorlimit) {
-			cout << trianglenumber << endl << c << endl << endl;
+			std::cout << tnum << std::endl << c << std::endl << std::endl;
 		}
 
 	}

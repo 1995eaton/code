@@ -5,7 +5,6 @@
 #include <vector>
 #include <cmath>
 #include <sstream>
-#include <exception>
 #include <ctime>
 #include <iomanip>
 

@@ -1,19 +1,33 @@
 #include <iostream>
+#include <string>
 #include <cmath>
+#include <sstream>
 #include <vector>
 #include "SDL.h"
 
-const int SIDE = 500;
-const ulong LIMIT = SIDE*SIDE;
 
 void putpixel (SDL_Surface *surface, int x, int y, Uint32 pixel);
 void fillSieve (std::vector<bool> &sieve);
 void putSpiral (SDL_Surface*& screen, std::vector<bool> &sieve, Uint32 &color);
 
-int main(int argc, char **argv) {
+int SIDE;
+ulong LIMIT;
+
+int main(int argc, char** argv) {
 
   Uint32 color;
   SDL_Surface *screen;
+  if (argc == 1) {
+    std::cerr << "Error: enter a side length\n";
+    return 0;
+  }
+  std::istringstream iss(argv[1]);
+  if (!(iss >> SIDE)) {
+    std::cerr << "Error: '" << argv[1] << "' positive integer required\n";
+    return 0;
+  }
+
+  LIMIT = SIDE*SIDE;
 
   if (SDL_Init(SDL_INIT_VIDEO) < 0) {
     std::cout << "SDL initialization failed: " << SDL_GetError() << std::endl;
@@ -21,8 +35,7 @@ int main(int argc, char **argv) {
   }
 
   atexit(SDL_Quit);
-  screen = SDL_SetVideoMode(SIDE, SIDE, 8,
-      SDL_SWSURFACE | SDL_ANYFORMAT);
+  screen = SDL_SetVideoMode(SIDE, SIDE, 8, SDL_SWSURFACE | SDL_ANYFORMAT);
 
   if (screen == NULL) {
     std::cout << "Error setting video mode: " << SDL_GetError() << std::endl;
@@ -56,7 +69,8 @@ int main(int argc, char **argv) {
     SDL_Delay(32);
   }
 
-  SDL_SaveBMP(screen, "output.bmp");
+  char* filename = strcat(argv[1], ".png");
+  SDL_SaveBMP(screen, filename);
   SDL_FreeSurface(screen);
   return 0;
 }
@@ -135,8 +149,8 @@ void putSpiral(SDL_Surface*& screen, std::vector<bool> &sieve, Uint32 &color) {
 
 void fillSieve (std::vector<bool> &sieve) {
   sieve[2] = 1; sieve[3] = 1;
-  for(ulong x = 1; x < SIDE; x++) {
-    for(ulong y = 1; y < SIDE; y++) {
+  for(int x = 1; x < SIDE; x++) {
+    for(int y = 1; y < SIDE; y++) {
       ulong n = 4*x*x+y*y;
       if (n <= LIMIT && (n % 12 == 1 || n % 12 == 5)) {
         sieve[n] = !sieve[n];
@@ -151,7 +165,7 @@ void fillSieve (std::vector<bool> &sieve) {
       }
     }
   }
-  for(ulong n = 5; n < SIDE; n++) {
+  for(int n = 5; n < SIDE; n++) {
     if(sieve[n]) {
       ulong nn = n*n;
       for(ulong i = nn; i < LIMIT; i += nn) {

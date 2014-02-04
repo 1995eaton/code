@@ -8,3 +8,9 @@ ulam.o: ulam.cpp
 
 clean:
 	rm -f ulam.o ulam
+
+install: ulam
+	cp ulam /usr/local/bin/
+
+uninstall:
+	rm -f /usr/local/bin/ulam

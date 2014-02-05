@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
   }
 
   for (unsigned long long n = 5; n < sqrt(limit); n++) {
-    if(sieve.test(n)) {
+    if (sieve.test(n)) {
       for (unsigned long long i = n*n; i < limit; i += n) {
         sieve.reset(i);
       }
@@ -58,9 +58,12 @@ int main(int argc, char *argv[]) {
       std::cout << n << std::endl;
     }
   }
-  std::cout.width(27); std::cout << std::endl << std::left << "Completed the sieve in: " << std::right << sieve_fill_time << "s\n";
-  std::cout.width(27); std::cout << std::left << "Completed the output in: " << std::right << ((std::clock() - start) / (double) CLOCKS_PER_SEC) - sieve_fill_time << "s\n";
-  std::cout.width(27); std::cout << std::left << "Total time: " << std::right << (std::clock() - start) / (double) CLOCKS_PER_SEC << "s\n";
+  std::cout.width(27); std::cout << std::endl << std::left <<
+    "Completed the sieve in: " << std::right << sieve_fill_time << "s\n";
+  std::cout.width(27); std::cout << std::left << "Completed the output in: " <<
+    std::right << ((std::clock() - start) / (double) CLOCKS_PER_SEC) - sieve_fill_time << "s\n";
+  std::cout.width(27); std::cout << std::left << "Total time: " <<
+    std::right << (std::clock() - start) / (double) CLOCKS_PER_SEC << "s\n";
   return 0;
 
 }

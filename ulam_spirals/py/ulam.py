@@ -3,9 +3,11 @@ from random import randrange
 from math import e
 import numpy
 
+
 class PrimeChart:
 
-    def __init__(self, side_length, both = False, prime_color = 0xffffff, nonprime_color = 0x000000, skew_ratio = 1):
+    def __init__(self, side_length, both=False, prime_color=0xffffff,
+                 nonprime_color=0x000000, skew_ratio=1):
         self.side_length = side_length
         self.skew_ratio = skew_ratio
         self.prime_color = prime_color
@@ -19,23 +21,24 @@ class PrimeChart:
         self.sieve[:2] = False
         print("Sieve generation finished")
 
-        if both == True:
+        if both is True:
             self.Grid()
             self.Spiral()
 
     def Grid(self):
-        img = Image.new("1", (int(self.side_length/self.skew_ratio), int(self.side_length*self.skew_ratio)), self.nonprime_color)
+        img = Image.new("1", (int(self.side_length/self.skew_ratio),
+                        int(self.side_length*self.skew_ratio)),
+                        self.nonprime_color)
         width, height = img.size
         c = 0
         for x in range(0, width):
             for y in range(0, height):
                 if self.sieve[(x)+(width*y)]:
-                    c+=1
+                    c += 1
                     img.putpixel((x, y), self.prime_color)
 
         img.save("GRID-{0}.png".format(self.side_length))
         print("Grid generation finished")
-
 
     def Spiral(self):
         n, i, c = range(3)
@@ -48,7 +51,7 @@ class PrimeChart:
                 y, c = y-1, c+1
                 if self.sieve[c]:
                     img.putpixel((x, y), self.prime_color)
-            i+=1
+            i += 1
             for n in range(i):
                 x, c = x-1, c+1
                 if self.sieve[c]:
@@ -57,7 +60,7 @@ class PrimeChart:
                 y, c = y+1, c+1
                 if self.sieve[c]:
                     img.putpixel((x, y), self.prime_color)
-            i+=1 
+            i += 1
             for n in range(i):
                 x, c = x+1, c+1
                 if self.sieve[c]:
@@ -67,7 +70,7 @@ class PrimeChart:
 
 
 def main():
-    p = PrimeChart(500, both = True)
+    p = PrimeChart(500, both=True)
 
 
 if __name__ == '__main__':

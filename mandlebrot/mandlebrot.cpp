@@ -2,10 +2,18 @@
 #include <cmath>
 #include <iostream>
 
+const double size = 1;
+const double x_offset = 0;
+const double y_offset = 0;
+const bool smooth = 1;
+const bool use_pallet = 0;
+const int iterations = 300;
+const int WIDTH = 800;
+const int HEIGHT = 900;
+const ulong AREA = WIDTH*HEIGHT;
+
 using namespace std;
 
-const int WIDTH = 500, HEIGHT = 500;
-const ulong AREA = WIDTH*HEIGHT;
 
 void putpixel(SDL_Surface *surface, int x, int y, Uint32 pixel) { 
   int bpp = surface->format->BytesPerPixel; 
@@ -38,12 +46,6 @@ void drawMandlebrot(SDL_Surface *surface) {
   };
   double x0, y0;
   double xtemp, x, ytemp, y;
-  double size = 1;
-  double x_offset = 0;
-  double y_offset = 0;
-  bool smooth = 0;
-  bool use_pallet = 1;
-  int iterations = 200;
   Uint32 color;
   for (int pY = 0; pY < HEIGHT; pY++) {
     for (int pX = 0; pX < WIDTH; pX++) {

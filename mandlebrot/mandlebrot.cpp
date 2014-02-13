@@ -2,14 +2,14 @@
 #include <cmath>
 #include <iostream>
 
-const double size = 1;
-const double x_offset = 0;
+const double size = 3;
+const double x_offset = -1;
 const double y_offset = 0;
-const bool smooth = 1;
-const bool use_pallet = 0;
+const bool smooth = 0;
+const bool use_pallet = 1;
 const int iterations = 300;
-const int WIDTH = 800;
-const int HEIGHT = 900;
+const int WIDTH = 1920;
+const int HEIGHT = 1080;
 const ulong AREA = WIDTH*HEIGHT;
 
 using namespace std;

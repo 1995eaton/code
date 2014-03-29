@@ -2,14 +2,14 @@
 #include <cmath>
 #include <iostream>
 
-const double size = 3;
-const double x_offset = -1;
+const double size = 1;
+const double x_offset = 0;
 const double y_offset = 0;
 const bool smooth = 0;
 const bool use_pallet = 1;
-const int iterations = 300;
-const int WIDTH = 1920;
-const int HEIGHT = 1080;
+const int iterations = 100;
+const int WIDTH = 1920*3;
+const int HEIGHT = 1080*3;
 const ulong AREA = WIDTH*HEIGHT;
 
 using namespace std;
@@ -83,10 +83,10 @@ void drawMandlebrot(SDL_Surface *surface) {
           }
         }
         putpixel(surface, pX, pY, color);
-        SDL_UpdateRect(surface, pX, pY, 1, 1);
       }
     }
   }
+  SDL_UpdateRect(surface, 0, 0, 0, 0);
 }
 
 int main(int argc, char *argv[]) { 

@@ -5,8 +5,8 @@
 const double size = 1;
 const double x_offset = 0;
 const double y_offset = 0;
-const bool smooth = 0;
-const bool use_pallet = 1;
+const bool smooth = 1;
+const bool use_pallet = 0;
 const int iterations = 100;
 const int WIDTH = 1920*3;
 const int HEIGHT = 1080*3;

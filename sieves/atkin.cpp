@@ -11,23 +11,30 @@
 
 int main(int argc, char *argv[]) {
 
-  clock_t start = std::clock();
-
   if (argc < 2) {
     std::cout << "Usage:\natkin <limit>" << std::endl;
     return 0;
   }
 
-  unsigned long long limit, x, y, n, i, j, q;
+  clock_t start = std::clock();
+  uint64_t limit, x, y, n, i, j, q, sq;
+  double sieve_fill_time;
+  char* output_file = strcat(argv[1], ".txt");
 
+  std::ofstream file;
   std::istringstream iss(argv[1]);
+
   if (!(iss >> limit)) {
     std::cout << "Usage:\natkin <limit>" << std::endl;
     return 0;
   }
 
-  unsigned long long sq = sqrt(limit);
-  boost::dynamic_bitset<> sieve(limit+1);
+  if (limit < 3) {
+    return 0;
+  }
+
+  sq = sqrt(limit);
+  boost::dynamic_bitset<> sieve(limit + 1);
   sieve.set(2); sieve.set(3);
 
   for (x = 1; x < sq; x++) {
@@ -55,15 +62,12 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  double sieve_fill_time = (std::clock() - start) / (double) CLOCKS_PER_SEC;
-
-  char* output_file = strcat(argv[1], ".txt");
-  std::ofstream file;
+  sieve_fill_time = (std::clock() - start) / (double) CLOCKS_PER_SEC;
   file.open(output_file);
 
-  for (unsigned long long n = 1; n < limit; n++) {
-    if (sieve.test(n)) {
-      file << n << std::endl;
+  for (i = 1; i < limit; i += 2) {
+    if (sieve.test(i)) {
+      file << i << std::endl;
     }
   }
 

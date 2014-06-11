@@ -19,9 +19,9 @@ int main(int argc, char *argv[]) {
   clock_t start = std::clock();
   uint64_t limit, x, y, n, i, j, q, sq;
   double sieve_fill_time;
-  char* output_file = strcat(argv[1], ".txt");
 
-  std::ofstream file;
+  std::ofstream file(strcat(argv[1], ".txt"), std::ofstream::binary);
+  std::stringstream prime_str(std::stringstream::out|std::stringstream::binary);
   std::istringstream iss(argv[1]);
 
   if (!(iss >> limit)) {
@@ -63,13 +63,13 @@ int main(int argc, char *argv[]) {
   }
 
   sieve_fill_time = (std::clock() - start) / (double) CLOCKS_PER_SEC;
-  file.open(output_file);
 
   for (i = 1; i < limit; i += 2) {
     if (sieve.test(i)) {
-      file << i << std::endl;
+      prime_str << i << "\n";
     }
   }
+  file.write(prime_str.str().c_str(), prime_str.str().length());
 
   std::cout << "\e[0;32mCompleted the sieve in:\e[0;0m  "
     << sieve_fill_time << "s\n";

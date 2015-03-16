@@ -1,7 +1,8 @@
-def Fib(lim):
-    a, b = 0, 1
-    while a < lim:
-        yield a
-        a, b = b, a + b
+a, b = 0, 1
+total = 0
+while a < 4000000:
+    a, b = b, a + b
+    if a % 2 == 0:
+        total += a
 
-print(sum([i for i in list(Fib(4000000)) if not i % 2]))
+print(total)

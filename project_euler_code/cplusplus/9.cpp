@@ -1,19 +1,23 @@
-#include<iostream>
+#include <iostream>
+#include <cmath>
 
-using namespace std;
+#define LIMIT 500
 
 int main() {
 
-	int a, b, c;
+  int a, b;
+  float c;
 
-	for(c = 0; true; ++c) {
-		for(b = 0; b < c; ++b) {
-			for(a = 0; a < b; ++a) {
-				if(a*a + b*b == c*c && a + b + c == 1000) {
-					cout << a*b*c << endl;
-					return 0;
-				}
-			}
-		}
-	}
+  for (a = 1; a < LIMIT; a++) {
+    for (b = a + 1; b < LIMIT; b++) {
+      c = sqrt(a*a + b*b);
+      if (a + b + c == 1000) {
+        std::cout << int(a * b * c) << std::endl;
+        return 0;
+      }
+    }
+  }
+
+  return 0;
+
 }

@@ -44,7 +44,7 @@ int main() {
     prod = 1;
   }
 
-  // Vertical 
+  // Vertical
 
   for (int i = 0; i < 340; i++) {
     for (int i2 = 0; i2 < 4; i2++) {
@@ -76,7 +76,7 @@ int main() {
   }
 
   // Diagonal (Right to left)
-  
+
   for (int i = 3; i <= 20; i++) {
     c = 0;
     if (i == 20) {
